@@ -1,0 +1,93 @@
+<!doctype html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <base href="/" target="_blank">
+    <title>Chimidi</title>
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" media="all" href="stylesheets/chimidi-release.css">
+    <script type="text/javascript">
+      (function() {
+        'use strict';
+        var devMode = window.location.search &&
+          window.location.search.indexOf('dev') !== -1;
+        var offlineMode = window.navigator.onLine === false ||
+          (!!window.location.search &&
+           window.location.search.indexOf('offline') !== -1);
+        var html = document.getElementsByTagName('html')[0];
+
+        window.DEV_MODE = devMode;
+        window.OFFLINE_MODE = devMode || offlineMode;
+
+        html.className = (html.className || '').replace('no-js', 'js');
+      })();
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      //_gaq.push(['_setAccount', 'UA-37368807-1']);
+      _gaq.push(['_trackPageview']);
+
+      if (!window.OFFLINE_MODE) {
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      }
+    </script>
+  </head>
+  <body>
+    <section class="keyboard">
+      <ul class="top row">
+        <li class="wide left" data-note="Gb2"></li>
+        <li data-note="Ab3"></li>
+        <li class="wide right"  data-note="Bb3"></li>
+        <li class="wide left" data-note="Db3"></li>
+        <li class="wide right" data-note="Eb3"></li>
+        <li class="wide left" data-note="Gb3"></li>
+        <li data-note="Ab3"></li>
+        <li class="wide right" data-note="Bb4"></li>
+        <li class="wide left" data-note="Db4"></li>
+        <li class="wide right" data-note="Eb4"></li>
+      </ul>
+      <ul class="bottom row">
+        <li data-note="F2"></li>
+        <li data-note="G2"></li>
+        <li data-note="A3"></li>
+        <li data-note="B3"></li>
+        <li data-note="C3"></li>
+        <li data-note="D3"></li>
+        <li data-note="E3"></li>
+        <li data-note="F3"></li>
+        <li data-note="G3"></li>
+        <li data-note="A4"></li>
+        <li data-note="B4"></li>
+        <li data-note="C4"></li>
+        <li data-note="D4"></li>
+        <li data-note="E4"></li>
+      </ul>
+    </section>
+    <script type="text/javascript">
+      (function() {
+        'use strict';
+        var script = document.createElement('script');
+        var cursor = document.getElementsByTagName('script')[0];
+        var module = 'javascripts/config';
+
+        script.type = 'text/javascript';
+        script.async = true;
+
+        if (window.DEV_MODE) {
+          script.setAttribute('data-main', module);
+          script.src = 'javascripts/support/require.js';
+        } else {
+          script.src = 'javascripts/chimidi-release.js';
+        }
+
+        cursor.parentNode.insertBefore(script, cursor);
+      })();
+    </script>
+  </body>
+</html>

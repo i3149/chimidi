@@ -1,0 +1,123 @@
+body {
+  font-size: 40px;
+  background: #606060;
+}
+
+ul, li, section {
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
+}
+
+.keyboard {
+  background: #444;
+  padding: 0.1em;
+  border-radius: 0.15em;
+  margin: 1em;
+  width: 29.3em;
+}
+
+.keyboard > .row {
+  overflow: hidden;
+}
+
+.keyboard > .row > li {
+  background: #eee;
+  margin: 0 0.1em 0 0;
+  float: left;
+  border-radius: 0.1em;
+  box-shadow: 0 0 0.1em #888;
+}
+
+
+.keyboard > .row > li:last-child {
+  margin: 0;
+}
+
+.keyboard > .row > li.pressed {
+  background: #ddd;
+}
+
+.keyboard > .top.row {
+  margin-bottom: 0.1em;
+}
+
+.keyboard > .top.row > li {
+  width: 2em;
+  height: 2em;
+}
+
+.keyboard > .top.row > li:after {
+  content: '';
+  display: block;
+  position: relative;
+  margin: 15%;
+  background: #444;
+  height: 70%;
+  border-radius: 1em;
+  box-shadow: -0.2em -0.2em 0.4em #ccc,
+              0.2em 0.2em 0.4em #fafafa,
+              0.075em 0 0 #eee inset,
+              -0.075em 0 0 #eee inset,
+              0 -0.075em 0 #eee inset,
+              0 0.075em 0 #eee inset,
+              0.05em 0.05em 0.05em #cacaca inset,
+              -0.05em -0.05em 0.05em #fcfcfc inset;
+}
+
+.keyboard > .top.row > li.pressed:after {
+  content: '';
+  display: block;
+  position: relative;
+  margin: 15%;
+  background: #404040;
+  height: 70%;
+  border-radius: 1em;
+  box-shadow: -0.2em -0.2em 0.4em #cacaca,
+              0.2em 0.2em 0.4em #f4f4f4,
+              0.075em 0 0 #eee inset,
+              -0.075em 0 0 #eee inset,
+              0 -0.075em 0 #eee inset,
+              0 0.075em 0 #eee inset,
+              0.05em 0.05em 0.05em #cacaca inset,
+              -0.05em -0.05em 0.05em #fcfcfc inset;
+}
+
+.keyboard > .top.row > li.wide.left {
+  padding-left: 1.05em;
+}
+
+.keyboard > .top.row > li.wide.right {
+  padding-right: 1.05em;
+}
+
+.keyboard > .bottom.row > li {
+  width: 2em;
+  height: 4em;
+}
+
+
+.keyboard > .bottom.row > li:after {
+  content: '';
+  display: block;
+  position: relative;
+  margin: 15%;
+  background: #eee;
+  height: 85%;
+  border-radius: 1em;
+  box-shadow: -0.2em -0.2em 0.4em #ccc,
+              0.2em 0.2em 0.4em #fafafa,
+              0.05em 0.05em 0.05em #cacaca inset,
+              -0.05em -0.05em 0.05em #fcfcfc inset;
+}
+
+
+.keyboard > .bottom.row > li.pressed:after {
+  background: #dfdfdf;
+
+  box-shadow: -0.2em -0.2em 0.4em #cacaca,
+              0.2em 0.2em 0.4em #f4f4f4,
+              0.05em 0.05em 0.05em #cacaca inset,
+              -0.05em -0.05em 0.05em #fcfcfc inset;
+}
