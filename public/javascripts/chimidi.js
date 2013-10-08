@@ -1,5 +1,5 @@
-define(['jquery', 'midi'],
-       function($, MIDI) {
+define(['promenade', 'jquery', 'midi', 'monkey'],
+       function(Promenade, $, MIDI, Monkey) {
   'use strict';
 
   MIDI.loadPlugin({
@@ -9,16 +9,14 @@ define(['jquery', 'midi'],
       $('.keyboard li').on('mousedown touchstart', function() {
         var key = $(this);
         var note = MIDI.keyToNote[key.data('note')];
-
-        key.addClass('pressed');
-
-        MIDI.setVolume(0, 127);
-        MIDI.noteOn(0, note, 127, 0);
+        var volume = 127;
+        
+        //console.log("Note %d", note)
+        chmidi.doNoteOn(note, volume)
 
         key.one('mouseup mouseout touchend', function off() {
           key.off('mouseup mouseout touchend', off);
-          MIDI.noteOff(0, note, 0);
-          key.removeClass('pressed');
+          chmidi.doNoteOff(note)
         });
 
         return false;
