@@ -16,7 +16,7 @@ define(['promenade', 'underscore', 'jquery'], function(Promenade, _, $) {
         return;
       }
 
-      this._ws = new WebSocket('ws://127.0.0.1:9001');
+      this._ws = new WebSocket('ws://'+document.location.hostname+':9001');
       this._ws.addEventListener('message', _.bind(this._onMessage, this));
     },
     disconnect: function() {
