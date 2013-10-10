@@ -38,7 +38,7 @@
         deps: ['midi/MIDI/Plugin']
       }
     },
-    deps: ['chimidi']
+    deps: ['chimidi', 'application']
   });
 
   require(['application'], function(Chmidi) {

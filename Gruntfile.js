@@ -43,7 +43,7 @@ module.exports = function(grunt) {
           out: 'public/javascripts/<%= pkg.name %>-release.js',
           useStrict: true,
           include: ['support/almond'],
-          addRequire: ['chimidi'],
+          addRequire: ['chimidi', 'application', 'monkey'],
           wrap: {
             start: banner
           }

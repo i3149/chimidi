@@ -25,7 +25,7 @@ define(['promenade', 'underscore', 'jquery'], function(Promenade, _, $) {
       this._ws = null;
     },
     setAI: function(aifn) {
-      this._aiHandler = aifn
+      this._aiHandler = aifn;
     },
     send: function(data) {
       var out;
@@ -67,8 +67,8 @@ define(['promenade', 'underscore', 'jquery'], function(Promenade, _, $) {
       } catch(e) {}
 
       // Should the ai logic be abstracted out somewhere? 
-      if (event && event.data["ai"] && this._aiHandler) {
-        this._aiHandler(event)
+      if (event && event.data.ai && this._aiHandler) {
+        this._aiHandler(event);
       } else {
         if (event && event.requestId) {
           this._requests[event.requestId].resolve(event.data);

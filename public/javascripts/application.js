@@ -4,7 +4,7 @@ define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
       this.getNewSession();
       this.monkey = new Monkey();
       this.monkey.connect();
-      this.monkey.setAI(_.bind(this._handleAICall, this))
+      this.monkey.setAI(_.bind(this._handleAICall, this));
     },
 
     getNewSession: function() {
@@ -42,8 +42,8 @@ define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
 
       this.monkey.send(data).then(function(resp) {
         console.log('CHMIDI << %s', JSON.stringify(resp));
-      }
-    )},
+      });
+    },
 
     doNoteOff: function(note) {
       var data = {
@@ -65,9 +65,9 @@ define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
 
     _handleAICall: function(event) {
       
-      var note = parseInt(event.data["Note"])
-      var volume = parseInt(event.data["Vol"])
-      var action = event.data["Action"]
+      var note = parseInt(event.data.Note, 10);
+      var volume = parseInt(event.data.Vol, 10);
+      var action = event.data.Action;
       var keyId = MIDI.noteToKey[note];
 
       console.log("Processing ai event: %d %d %s", note, volume, action);

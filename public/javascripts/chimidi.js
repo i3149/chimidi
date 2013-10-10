@@ -27,7 +27,7 @@ define(['promenade', 'jquery', 'midi', 'monkey'],
            73: "Gb3",
            79: "Ab3",
            80: "Bb3",
-         }
+         };
 
   MIDI.loadPlugin({
     soundfontUrl: './soundfonts/',
@@ -39,11 +39,11 @@ define(['promenade', 'jquery', 'midi', 'monkey'],
         var volume = 127;
         
         //console.log("Note %d", note)
-        chmidi.doNoteOn(note, volume)
+        chmidi.doNoteOn(note, volume);
 
         key.one('mouseup mouseout touchend', function off() {
           key.off('mouseup mouseout touchend', off);
-          chmidi.doNoteOff(note)
+          chmidi.doNoteOff(note);
         });
 
         return false;
@@ -54,7 +54,7 @@ define(['promenade', 'jquery', 'midi', 'monkey'],
         var volume = 127;
 
         if (note) {          
-          chmidi.doNoteOff(note, volume)
+          chmidi.doNoteOff(note, volume);
         }
       });
 
@@ -63,7 +63,7 @@ define(['promenade', 'jquery', 'midi', 'monkey'],
         var volume = 127;
 
         if (note) {
-          chmidi.doNoteOn(note, volume)
+          chmidi.doNoteOn(note, volume);
         }
       });
     }
