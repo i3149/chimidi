@@ -40,12 +40,11 @@ define(['promenade', 'jquery', 'midi', 'monkey'],
         
         //console.log("Note %d", note)
         chmidi.doNoteOn(note, volume);
-
+        
         key.one('mouseup mouseout touchend', function off() {
           key.off('mouseup mouseout touchend', off);
           chmidi.doNoteOff(note);
         });
-
         return false;
       });
 
