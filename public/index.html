@@ -84,7 +84,10 @@
           script.setAttribute('data-main', module);
           script.src = 'javascripts/support/require.js';
         } else {
-          script.src = 'javascripts/chimidi-release.js';
+          script.setAttribute('data-main', module);
+          script.src = 'javascripts/support/require.js';
+// Qick hack to get working.
+//          script.src = 'javascripts/chimidi-release.js';
         }
 
         cursor.parentNode.insertBefore(script, cursor);

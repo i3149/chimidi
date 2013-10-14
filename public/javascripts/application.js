@@ -1,5 +1,5 @@
 define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
-  var Chmidi = Promenade.Application.extend({
+  var ChmidiPlayer = Promenade.Application.extend({
     initialize: function() {
       this.getNewSession();
       this.monkey = new Monkey();
@@ -15,8 +15,8 @@ define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
         contentType: "application/json",
         dataType: 'jsonp',
         success: function(json) {
-          Chmidi._session_id = json.sid;
-          console.log("Starting session %s", Chmidi._session_id);
+          ChmidiPlayer._session_id = json.sid;
+          console.log("Starting session %s", ChmidiPlayer._session_id);
         },
         error: function(e) {
           console.log(e.message);
@@ -27,7 +27,7 @@ define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
     doNoteOn: function(note, volume) {
 
       var data = {
-        "S": Chmidi._session_id,
+        "S": ChmidiPlayer._session_id,
         "Note": note.toString(),
         "Vol": volume.toString(),
         "Action": "on",
@@ -47,7 +47,7 @@ define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
 
     doNoteOff: function(note) {
       var data = {
-        "S": Chmidi._session_id,
+        "S": ChmidiPlayer._session_id,
         "Note": note.toString(),
         "Action": "off"
       };
@@ -82,5 +82,5 @@ define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
     }
   });
 
-  return Chmidi;
+  return ChmidiPlayer;
 });
