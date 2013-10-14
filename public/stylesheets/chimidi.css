@@ -121,3 +121,22 @@ ul, li, section {
               0.05em 0.05em 0.05em #cacaca inset,
               -0.05em -0.05em 0.05em #fcfcfc inset;
 }
+
+.footer {
+  font-size: 15px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about {
+  background: #FFF;
+  padding: 0.1em;
+  border-radius: 0.15em;
+  margin: 1em;
+  width: 29.3em;
+}
+
+.footer > a:link {
+    text-decoration:none;
+}
