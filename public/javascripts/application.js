@@ -38,10 +38,10 @@ define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
       MIDI.noteOn(0, note, 127, 0);
       $("#"+keyId).addClass('pressed');
 
-      console.log('CHMIDI >> %s', JSON.stringify(data));
+      //console.log('CHMIDI >> %s', JSON.stringify(data));
 
       this.monkey.send(data).then(function(resp) {
-        console.log('CHMIDI << %s', JSON.stringify(resp));
+        //console.log('CHMIDI << %s', JSON.stringify(resp));
       });
     },
 
@@ -56,10 +56,10 @@ define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
       MIDI.noteOff(0, note, 0);
       $("#"+keyId).removeClass('pressed');
 
-      console.log('CHMIDI >> %s %s', JSON.stringify(data), this._session_id);
+      //console.log('CHMIDI >> %s %s', JSON.stringify(data), this._session_id);
 
       this.monkey.send(data).then(function(resp) {
-        console.log('CHMIDI << %s', JSON.stringify(resp));
+        //console.log('CHMIDI << %s', JSON.stringify(resp));
       });
     },
 
@@ -70,7 +70,7 @@ define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
       var action = event.data.Action;
       var keyId = MIDI.noteToKey[note];
 
-      console.log("Processing ai event: %d %d %s", note, volume, action);
+      //console.log("Processing ai event: %d %d %s", note, volume, action);
       if (action == "on") {
         MIDI.setVolume(0, volume);
         MIDI.noteOn(0, note, 127, 0);

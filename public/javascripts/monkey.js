@@ -50,7 +50,7 @@ define(['promenade', 'underscore', 'jquery'], function(Promenade, _, $) {
         eventuallyResponds = new $.Deferred();
         this._requests[requestId] = eventuallyResponds;
 
-        console.log('MONKEY >> %s', out);
+        //console.log('MONKEY >> %s', out);
         this._ws.send(out);
 
         return eventuallyResponds.promise();
@@ -60,7 +60,7 @@ define(['promenade', 'underscore', 'jquery'], function(Promenade, _, $) {
       var response = message.data;
       var event;
 
-      console.log('MONKEY << %s', response);
+      //console.log('MONKEY << %s', response);
 
       try {
         event = JSON.parse(response);
