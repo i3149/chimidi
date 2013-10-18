@@ -44,7 +44,7 @@
       Spin the wheel and play midi-roulette. You will be randomly matched with another player. Each player has the same piano and all notes one of you plays will be heard by the other. If no one else joins in the first 15 seconds an AI will be your buddy. The keys a-" and above are mapped to piano keys.
       </p>
       <p>
-        On the back end, there's a node server working the web-sockets. It then sends events received over ZeroMQ on to a matching program written in Go which connects sessions. This is also where the AI lives.
+        On the back end, there's a node.js server working the web-sockets. It sends events (keydown, keyup) received from the client over ZeroMQ to a matching program written in Go which connects sessions. This is also where the AI lives. Upstream and downstream events are handled in separate queues.   
       </p>
     </section>
     <div class="footer"><a href="/">Play</a> | &copy;2013 Chimera.io.</div>
