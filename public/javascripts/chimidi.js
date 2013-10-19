@@ -67,7 +67,7 @@ define(['promenade', 'jquery', 'midi', 'monkey', 'application'],
       });
 
       $('a#newSession').click( function() {
-        chmidi.getNewSession();
+        location.reload();
         return false;
       });
     }
