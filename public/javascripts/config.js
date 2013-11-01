@@ -7,7 +7,7 @@
       'jquery': 'support/jquery',
       'underscore': 'support/underscore',
       'templates': 'support/templates',
-      'promenade': 'support/promenade',
+      'chobjects': 'support/chobjects',
       'backbone': 'support/backbone',
       'handlebars': 'support/handlebars',
       'midi': 'support/midi',

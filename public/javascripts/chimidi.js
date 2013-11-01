@@ -1,5 +1,5 @@
-define(['promenade', 'jquery', 'midi', 'monkey', 'application'],
-       function(Promenade, $, MIDI, Monkey, Application) {
+define(['jquery', 'midi', 'monkey', 'application'],
+       function($, MIDI, Monkey, Application) {
   'use strict';
 
          var key2Note = {

@@ -1,5 +1,5 @@
-define(['promenade', 'jquery', 'monkey'], function(Promenade, $, Monkey) {
-  var ChmidiPlayer = Promenade.Application.extend({
+define(['chobjects', 'jquery', 'monkey'], function(ChObjects, $, Monkey) {
+  var ChmidiPlayer = ChObjects.extend({
     initialize: function() {
       this.getNewSession();
       this.monkey = new Monkey();

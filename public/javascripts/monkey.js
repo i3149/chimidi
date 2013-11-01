@@ -1,4 +1,4 @@
-define(['promenade', 'underscore', 'jquery'], function(Promenade, _, $) {
+define(['chobjects', 'underscore', 'jquery'], function(ChObjects, _, $) {
 
   var uid = (function() {
     var _id = 0;
@@ -7,7 +7,7 @@ define(['promenade', 'underscore', 'jquery'], function(Promenade, _, $) {
     };
   })();
 
-  var Monkey = Promenade.Object.extend({
+  var Monkey = ChObjects.extend({
     initialize: function() {
       this._requests = {};
     },
